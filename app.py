@@ -21,7 +21,7 @@ def load_models(task):
         return {
             "Logistic Regression": joblib.load("binary_logistic_regression_model.pkl"),
             "Naive Bayes": joblib.load("binary_naive_bayes_model.pkl"),
-            "Random Forest": joblib.load("binary_random_model.pkl"),
+            "Random Forest": joblib.load("binary_random_forest_model.pkl"),
             "SVM": joblib.load("binary_svm_model.pkl"),
             "Voting Classifier": joblib.load("binary_voting_model.pkl"),
         }, joblib.load("binary_tfidf_vectorizer.pkl")
@@ -29,7 +29,7 @@ def load_models(task):
         return {
             "Logistic Regression": joblib.load("multi_logistic_regression_model.pkl"),
             "Naive Bayes": joblib.load("multi_naive_bayes_model.pkl"),
-            "Random Forest": joblib.load("multi_random_model.pkl"),
+            "Random Forest": joblib.load("multi_random_forest_model.pkl"),
             "SVM": joblib.load("multi_linear_svc_model.pkl"),
         }, joblib.load("multi_tfidf_vectorizer.pkl")
 

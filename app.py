@@ -15,7 +15,7 @@ classification_type = st.radio(
 )
 
 # --- Step 2: Load appropriate models and vectorizers ---
-@st.cache(allow_output_mutation=True)
+@st.cache_resource(allow_output_mutation=True)
 def load_models(task):
     if task == "binary":
         return {

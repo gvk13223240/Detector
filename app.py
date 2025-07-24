@@ -5,7 +5,7 @@ import numpy as np
 
 # Set up app page
 st.set_page_config(page_title="Mental Health Detector", layout="centered")
-st.title("🧠 Mental Health Classification App")
+st.title("Mental Health Classification App")
 st.markdown("Developed by **Garlapati Vamshi Krishna**\n\n🔍 _Select classification type and input text to predict mental health condition._")
 
 # --- Step 1: User selects classification type ---
@@ -19,18 +19,18 @@ classification_type = st.radio(
 def load_models(task):
     if task == "binary":
         return {
-            "Logistic Regression": joblib.load("logistic_model.pkl"),
-            "Naive Bayes": joblib.load("naive_bayes_model.pkl"),
-            "Random Forest": joblib.load("random_model.pkl"),
-            "SVM": joblib.load("svm_model.pkl"),
-            "Voting Classifier": joblib.load("voting_model.pkl"),
-        }, joblib.load("tfidf_vectorizer.pkl")
+            "Logistic Regression": joblib.load("binary_logistic_regression_model.pkl"),
+            "Naive Bayes": joblib.load("binary_naive_bayes_model.pkl"),
+            "Random Forest": joblib.load("binary_random_model.pkl"),
+            "SVM": joblib.load("binary_svm_model.pkl"),
+            "Voting Classifier": joblib.load("binary_voting_model.pkl"),
+        }, joblib.load("binary_tfidf_vectorizer.pkl")
     else:
         return {
-            "Logistic Regression": joblib.load("multi_logistic_model.pkl"),
+            "Logistic Regression": joblib.load("multi_logistic_regression_model.pkl"),
             "Naive Bayes": joblib.load("multi_naive_bayes_model.pkl"),
             "Random Forest": joblib.load("multi_random_model.pkl"),
-            "SVM": joblib.load("multi_svm_model.pkl"),
+            "SVM": joblib.load("multi_linear_svc_model.pkl"),
         }, joblib.load("multi_tfidf_vectorizer.pkl")
 
 # Determine classification mode
